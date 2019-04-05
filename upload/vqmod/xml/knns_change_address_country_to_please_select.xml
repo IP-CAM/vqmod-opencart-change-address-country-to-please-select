@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<modification
+	xmlns="https://github.com/vqmod/vqmod"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://github.com/vqmod/vqmod https://raw.githubusercontent.com/vqmod/vqmod/master/vqmod.xsd"
+	>
+		<id><![CDATA[[VQMOD] Change in "Your Address" > "Country" the "default country" to "Please Select"]]></id>
+		<version>0.1.0</version>
+		<vqmver>2.6.3</vqmver>
+		<author>kanenas.net (aka Nikolas Branis) - nbran@kanenas.net</author>
+		<file path="catalog/view/theme/*/template/account/" name="register.tpl" error="log">
+			<operation error="skip">
+				<search position="replace"><![CDATA[<option value="<?php echo $country['country_id']; ?>" selected="selected"><?php echo $country['name']; ?></option>]]></search>
+				<add><![CDATA[<option value="<?php echo $country['country_id']; ?>"><?php echo $country['name']; ?></option>]]></add>
+			</operation>
+			<operation error="skip">
+				<search position="replace" index="2"><![CDATA[<option value=""><?php echo $text_select; ?></option>]]></search>
+				<add><![CDATA[<option value="" selected="selected"><?php echo $text_select; ?></option>]]></add>
+			</operation>
+		</file>
+		<file path="catalog/view/theme/*/template/extension/total/" name="shipping.tpl" error="log">
+			<operation error="skip">
+				<search position="replace"><![CDATA[<option value="<?php echo $country['country_id']; ?>" selected="selected"><?php echo $country['name']; ?></option>]]></search>
+				<add><![CDATA[<option value="<?php echo $country['country_id']; ?>"><?php echo $country['name']; ?></option>]]></add>
+			</operation>
+			<operation error="skip">
+				<search position="replace" index="1"><![CDATA[<option value=""><?php echo $text_select; ?></option>]]></search>
+				<add><![CDATA[<option value="" selected="selected"><?php echo $text_select; ?></option>]]></add>
+			</operation>
+		</file>
+		<file path="catalog/view/theme/*/template/checkout/" name="guest_shipping.tpl,register.tpl,shipping_address.tpl,shipping.tpl" error="log">
+			<operation error="skip">
+				<search position="replace"><![CDATA[<option value="<?php echo $country['country_id']; ?>" selected="selected"><?php echo $country['name']; ?></option>]]></search>
+				<add><![CDATA[<option value="<?php echo $country['country_id']; ?>"><?php echo $country['name']; ?></option>]]></add>
+			</operation>
+			<operation error="skip">
+				<search position="replace" index="2"><![CDATA[<option value=""><?php echo $text_select; ?></option>]]></search>
+				<add><![CDATA[<option value="" selected="selected"><?php echo $text_select; ?></option>]]></add>
+			</operation>
+		</file>
+		<!-- START: "Journal - Advanced Opencart Theme" > Quick Checkout  -->
+		<file path="catalog/view/theme/journal2/template/journal2/checkout/" name="address_form.tpl" error="log">
+			<operation error="skip">
+				<search position="replace"><![CDATA[selected="selected"><?php echo $country['name']; ?></option>]]></search>
+				<add><![CDATA[><?php echo $country['name']; ?></option>]]></add>
+			</operation>
+			<operation error="skip">
+				<search position="replace" index="1"><![CDATA[<option value=""><?php echo $text_select; ?></option>]]></search>
+				<add><![CDATA[<option value="" selected="selected"><?php echo $text_select; ?></option>]]></add>
+			</operation>
+		</file>
+		<!-- END: "Journal - Advanced Opencart Theme" > Quick Checkout  -->
+	</modification>
